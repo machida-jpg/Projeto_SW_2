@@ -77,10 +77,10 @@ https://machida-jpg.github.io/Projeto_PUCRS/
 #### Links - Fase 2
 
 **Repositório com os códigos-fonte:**  
-https://github.com/machida-jpg/Projeto_PUCRS
+https://github.com/machida-jpg/Projeto_SW_2
 
 **Site publicado no GitHub Pages:**  
-https://machida-jpg.github.io/Projeto_PUCRS/
+https://machida-jpg.github.io/Projeto_SW_2/
 
 
 ---
