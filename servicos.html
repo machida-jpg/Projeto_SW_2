@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMercado POKO Preço</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     /* ESTILO igual para todas as paginas  */
+    .category-banner {
+       padding: 4rem 2rem;
+       margin-bottom: 2rem;
+       border-radius: .3rem;
+       color: white; /* Cor do texto */
+       background-size: cover; /* tamanho */
+       background-position: center; /* Centralização */
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra */
+     }
+     
+     /* IMAGEM SERVICOS */
+	.banner-entrega {
+  	background-image: linear-gradient(rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.5)), url('imagens/entregador.jpg');
+	}
+        /* JANELA DE HORARIOS */
+    .time-slot-label {
+        cursor: pointer; border: 1px solid #dee2e6; border-radius: .375rem;
+        padding: .5rem .75rem; margin: .25rem; display: inline-block;
+        transition: background-color 0.2s, color 0.2s;
+    }
+    .time-slot-input { display: none; }
+    .time-slot-input:checked + .time-slot-label {
+        background-color: #198754; color: white; border-color: #198754; /* Verde sucesso */
+    }
+    .time-slot-label:hover { background-color: #e9ecef; }
+    .time-slot-input:checked + .time-slot-label:hover { background-color: #157347; }
+    .time-slot-label.disabled {
+        background-color: #f8f9fa; color: #adb5bd; cursor: not-allowed;
+        border-color: #dee2e6;
+    }
+    </style>
+</head>
+<body>
+	<!-- CABEÇALHO (igual em todas as páginas)-->
+	<header class="bg-light p-3">
+        <div class="container">
+            <h1 class="display-4">MiniMercado POKO Preço</h1>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            
+                            <ul class="navbar-nav me-auto align-items-center">
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="btn-group">
+                                        <a href="produtos.html" class="btn btn-light">Produtos</a>
+                                        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="visually-hidden">Alternar menu suspenso</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="frutas_verduras.html">Frutas e Verduras</a></li>
+                                            <li><a class="dropdown-item" href="nao_pereciveis.html">Não Perecíveis</a></li>
+                                            <li><a class="dropdown-item" href="higiene_limpeza.html">Higiene e Limpeza</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="servicos.html">Serviços</a>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="cadastro.html">Cadastre-se</a>
+                                </li>
+                                <li class="nav-item ms-2">
+                                    <a class="btn btn-outline-success" href="#">
+                                         Carrinho
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+        </div>
+    </header>
+
+<br>
+    <!-- CORPO DA PÁGINA DE SERVIÇOS -->
+    <div class="container">
+        <div class="p-5 mb-4 category-banner banner-entrega">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Agende sua Entrega ou Retirada</h1>
+                <p class="col-md-8 fs-4">Escolha a melhor opção para você e selecione uma data e horário disponíveis.</p>
+            </div>
+        </div>
+    </div>
+	
+<br>
+    <!-- CORPO DO FORMULARIO -->
+    <main class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Formulário de Agendamento</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <fieldset class="mb-4">
+                        <legend class="h5">1. Tipo de Serviço</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoServico" id="retirada" value="retirada" checked>
+                            <label class="form-check-label" for="retirada"><strong>Retirada no Local</strong> (Grátis)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tipoServico" id="tele" value="tele">
+                            <label class="form-check-label" for="tele"><strong>Tele-entrega</strong> (Taxa de R$ 5,00)</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mb-4">
+                        <legend class="h5">2. Escolha o dia</legend>
+                        <input type="date" id="campo-data" class="form-control">
+                        <div id="erro-data" class="text-danger mt-1" style="font-size: 0.9em;"></div>
+                    </fieldset>
+
+                    <fieldset class="mb-4">
+                        <legend class="h5">3. Escolha o horário</legend>
+                        <div id="janelas-de-horario-container">
+                            <p class="text-muted">Por favor, selecione uma data para ver os horários disponíveis.</p>
+                        </div>
+                    </fieldset>
+                    
+                    <button type="submit" class="btn btn-success w-100">Confirmar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const campoData = document.getElementById('campo-data');
+        const erroData = document.getElementById('erro-data');
+        const containerHorarios = document.getElementById('janelas-de-horario-container');
+
+        // JANELA DE HORARIO DE ENTREGA
+        const janelasDeHorario = [
+            { inicio: 8, fim: 10 }, { inicio: 10, fim: 12 },
+            { inicio: 12, fim: 14 }, { inicio: 14, fim: 16 },
+            { inicio: 16, fim: 18 }, { inicio: 18, fim: 20 }
+        ];
+
+        // JANELA DE HORARIO DISPONIVEL --DEPENDE DA DATA
+        function gerarHorarios(dataSelecionadaStr) {
+            containerHorarios.innerHTML = ''; // Limpa os horários antigos
+            const agora = new Date();
+            const dataSelecionada = new Date(`${dataSelecionadaStr}T00:00:00`);
+            
+            janelasDeHorario.forEach(janela => {
+                const horarioInicioSlot = new Date(dataSelecionada);
+                horarioInicioSlot.setHours(janela.inicio, 0, 0, 0);
+                
+                let viavel = true;
+                // SE FOR HOJE, HABILITA APENAS HORARIOS FUTUROS
+                if (horarioInicioSlot < agora) {
+                    viavel = false;
+                }
+
+                const idSlot = `slot-${janela.inicio}`;
+                const textoSlot = `${String(janela.inicio).padStart(2, '0')}:00 - ${String(janela.fim).padStart(2, '0')}:00`;
+
+                let slotHTML;
+                if (viavel) {
+                    slotHTML = `
+                        <input type="radio" name="horario" id="${idSlot}" value="${textoSlot}" class="time-slot-input">
+                        <label for="${idSlot}" class="time-slot-label">${textoSlot}</label>
+                    `;
+                } else {
+                    // SE PASSOU, DEIXAR CINZA
+                    slotHTML = `
+                        <input type="radio" name="horario" id="${idSlot}" value="${textoSlot}" class="time-slot-input" disabled>
+                        <label for="${idSlot}" class="time-slot-label disabled">${textoSlot}</label>
+                    `;
+                }
+                containerHorarios.innerHTML += slotHTML;
+            });
+					// SE PASSOU DAS 20H DE "HOJE"
+            if (containerHorarios.innerHTML === '') {
+                 containerHorarios.innerHTML = '<p class="text-muted">Não há mais horários disponíveis para hoje. Por favor, selecione outra data.</p>';
+            }
+        }
+
+
+        function handleDateChange(event) {
+            const dataSelecionada = new Date(`${event.target.value}T00:00:00`);
+            
+            // VERIFICAR DOMINGO -- NAO ATENDE
+            if (dataSelecionada.getUTCDay() === 0) {
+                erroData.textContent = 'Desculpe, não agendamos aos domingos.';
+                event.target.value = '';
+                containerHorarios.innerHTML = '<p class="text-muted">Por favor, selecione uma data válida para ver os horários.</p>';
+            } else {
+                erroData.textContent = '';
+                gerarHorarios(event.target.value);
+            }
+        }
+        
+        // CONFIGS INICIAL 
+        const hojeFormatado = new Date().toISOString().split('T')[0];
+        campoData.setAttribute('min', hojeFormatado); // BLOQUEIA DATA PASSADA
+        campoData.addEventListener('input', handleDateChange); 
+
+    </script>
+<br><br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer class="container mt-5 p-4 bg-light text-center">
+        <p>© 2025 MiniMercado POKO Preço</p>
+        <p>Endereço: Rua Brasil, 1234 - Centro</p>
+        <p>Contato: (51) 98938-9013 | pokopreco@outlook.com</p>
+    </footer>
+</body>
+</html>

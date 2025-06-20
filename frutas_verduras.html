@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMercado POKO Preço</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+     /* ESTILO igual para todas as paginas  */
+     .category-banner {
+       padding: 4rem 2rem;
+       margin-bottom: 2rem;
+       border-radius: .3rem;
+       color: white; /* Cor do texto */
+       background-size: cover; /* tamanho */
+       background-position: center; /* Centralização */
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra */
+     }
+     
+     /* IMAGEM FRUTAS */
+     .banner-frutas {
+       background-image: linear-gradient(rgba(0, 0, 0, 0.67), rgba(0, 0, 0, 0.5)), url('imagens/verduras.jpg');
+     }
+    </style>
+</head>
+<body>
+	<!-- CABEÇALHO (igual em todas as páginas)-->
+    <header class="bg-light p-3">
+        <div class="container">
+            <h1 class="display-4">MiniMercado POKO Preço</h1>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            
+                            <ul class="navbar-nav me-auto align-items-center">
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="btn-group">
+                                        <a href="produtos.html" class="btn btn-light">Produtos</a>
+                                        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="visually-hidden">Alternar menu suspenso</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="frutas_verduras.html">Frutas e Verduras</a></li>
+                                            <li><a class="dropdown-item" href="nao_pereciveis.html">Não Perecíveis</a></li>
+                                            <li><a class="dropdown-item" href="higiene_limpeza.html">Higiene e Limpeza</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="servicos.html">Serviços</a>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item">
+                                    <a class="btn btn-light" href="cadastro.html">Cadastre-se</a>
+                                </li>
+                                <li class="nav-item ms-2">
+                                    <a class="btn btn-outline-success" href="#">
+                                         Carrinho
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+        </div>
+    </header>
+
+<br>
+    <!-- CORPO (FRUTAS E VERDURAS) -->
+                            <div class="container">
+                                <div class="p-5 mb-4 category-banner banner-frutas">
+                                    <div class="container-fluid py-5">
+                                        <h1 class="display-5 fw-bold">Frutas e Verduras Fresquinhas</h1>
+                                        <p class="col-md-8 fs-4">Direto da horta para a sua mesa, com a qualidade que você confia e o preço que você procura.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+<main class="container">
+    <div class="row">
+
+        <section class="col-md-6">
+            <h3 class="mb-3"> 🍎 Frutas 🍎 </h3>
+
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/maca_argentina.png" class="img-fluid rounded-start p-2" alt="Uma Maçã Argentina">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Maçã Argentina</h5>
+                            <p class="card-text">R$ 14,90/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/banana.png" class="img-fluid rounded-start p-2" alt="Um cacho Banana">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Banana</h5>
+                            <p class="card-text">R$ 3,50/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/manga.png" class="img-fluid rounded-start p-2" alt="Uma Manga">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Manga</h5>
+                            <p class="card-text">R$ 6,50/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="col-md-6">
+            <h3 class="mb-3"> 🥗 Verduras 🥗 </h3>
+            
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/alface_lisa.png" class="img-fluid rounded-start p-2" alt="Um pé de Alface Lisa">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Alface Lisa</h5>
+                            <p class="card-text">R$ 2,75/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/cenoura.png" class="img-fluid rounded-start p-2" alt="Cenouras">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Cenoura</h5>
+                            <p class="card-text">R$ 5,00/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="row g-0">
+                    <div class="col-2 d-flex align-items-center justify-content-center">
+                        <img src="imagens/beterraba.png" class="img-fluid rounded-start p-2" alt="Beterrabas">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Beterraba</h5>
+                            <p class="card-text">R$ 3,50/kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+<br><br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- RODAPÉ (igual em todas as páginas) -->
+    <footer class="container mt-5 p-4 bg-light text-center">
+        <p>© 2025 MiniMercado POKO Preço</p>
+        <p>Endereço: Rua Brasil, 1234 - Centro</p>
+        <p>Contato: (51) 98938-9013 | pokopreco@outlook.com</p>
+    </footer>
+</body>
+</html>
